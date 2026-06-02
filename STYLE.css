@@ -1,0 +1,204 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f5f7ff;
+}
+
+/* GRID PRINCIPAL */
+
+.container{
+    display:grid;
+    grid-template-columns:220px 1fr;
+    grid-template-rows:70px 1fr;
+    grid-template-areas:
+    "sidebar header"
+    "sidebar main";
+    min-height:100vh;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+    grid-area:sidebar;
+    background:linear-gradient(
+        180deg,
+        #9d7bff,
+        #89cff0
+    );
+
+    color:white;
+    padding:25px;
+}
+
+.sidebar h2{
+    margin-bottom:30px;
+}
+
+.sidebar ul{
+    list-style:none;
+}
+
+.sidebar li{
+    margin:18px 0;
+    cursor:pointer;
+}
+
+/* HEADER */
+
+.header{
+    grid-area:header;
+
+    background:linear-gradient(
+        90deg,
+        #9d7bff,
+        #89cff0,
+        #ffb6d9
+    );
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 25px;
+}
+
+.logo{
+    color:white;
+    font-size:24px;
+    font-weight:bold;
+}
+
+.menu{
+    display:flex;
+    gap:25px;
+}
+
+.menu a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.perfil{
+    border:none;
+    background:white;
+    color:#7a59ff;
+    padding:10px 15px;
+    border-radius:20px;
+    cursor:pointer;
+}
+
+/* MAIN */
+
+.main{
+    grid-area:main;
+    padding:25px;
+}
+
+/* GRID DOS CURSOS */
+
+.cursos{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+/* CARD */
+
+.card{
+    background:white;
+    border-radius:12px;
+    padding:15px;
+
+    display:flex;
+    flex-direction:column;
+
+    box-shadow:0 4px 10px rgba(0,0,0,.1);
+}
+
+.imagem{
+    height:120px;
+
+    background:linear-gradient(
+        135deg,
+        #b497ff,
+        #89cff0,
+        #ffc0cb
+    );
+
+    border-radius:10px;
+    margin-bottom:15px;
+}
+
+.card h3{
+    color:#6d4cff;
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#666;
+    margin-bottom:15px;
+    flex-grow:1;
+}
+
+.card button{
+    border:none;
+    padding:10px;
+
+    background:linear-gradient(
+        90deg,
+        #9d7bff,
+        #ff9fd3
+    );
+
+    color:white;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+/* TABLET - 2 COLUNAS */
+
+@media (max-width: 992px){
+
+    .cursos{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .menu{
+        gap:15px;
+    }
+}
+
+/* CELULAR - 1 COLUNA */
+
+@media (max-width: 768px){
+
+    .container{
+        grid-template-columns:1fr;
+
+        grid-template-areas:
+        "header"
+        "sidebar"
+        "main";
+    }
+
+    .header{
+        flex-direction:column;
+        gap:10px;
+        padding:15px;
+    }
+
+    .menu{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .cursos{
+        grid-template-columns:1fr;
+    }
+}
