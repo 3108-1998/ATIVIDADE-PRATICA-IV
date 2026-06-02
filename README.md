@@ -1,5 +1,3 @@
-# Plataforma de Cursos Online - Tech Academy
-
 ## Informações do Aluno
 
 **Nome:** Nathália Michelly
